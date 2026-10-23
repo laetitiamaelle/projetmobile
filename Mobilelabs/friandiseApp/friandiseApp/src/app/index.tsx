@@ -13,7 +13,7 @@ const friandise :Friandise={
 }
   return (
     <ScrollView style={styles.container}>
-      <Text>Mes friandises</Text>
+      <Text style={{fontWeight:'bold', fontSize:20, marginTop:20, marginLeft:10}}>Mes friandises</Text>
       <FlatList
         numColumns={2}
         columnWrapperStyle={{gap:8}}

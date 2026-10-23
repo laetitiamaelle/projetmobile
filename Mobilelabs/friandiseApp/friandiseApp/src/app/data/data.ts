@@ -3,7 +3,8 @@ export const listeFriandise:Friandise[]=[
     {
         image:require("@/assets/images/fererro.jpg"),
         nom:"Ferrero rocher",
-        prix:20000
+        prix:20000,
+        isnew:true
     },
     {
         image:require("@/assets/images/kinderbueno.jpg"),
@@ -18,7 +19,8 @@ export const listeFriandise:Friandise[]=[
     {
         image:require("@/assets/images/kindersuprise.jpg"),
         nom:"kinder suprise",
-        prix:500
+        prix:500,
+        isnew:true
     },
     {
         image:require("@/assets/images/m&m.jpg"),
@@ -38,7 +40,8 @@ export const listeFriandise:Friandise[]=[
     {
         image:require("@/assets/images/lolipops.jpg"),
         nom:"lolipop",
-        prix:50
+        prix:50,
+        isnew:true
     },
     
     {
@@ -55,5 +58,11 @@ export const listeFriandise:Friandise[]=[
         image:require("@/assets/images/milka.jpg"),
         nom:"Milka",
         prix:1500
+    },
+    {
+        image:require("@/assets/images/kinderbueno.jpg"),
+        nom:"kinder bueno",
+        prix:200,
+        isnew:true
     },
 ]

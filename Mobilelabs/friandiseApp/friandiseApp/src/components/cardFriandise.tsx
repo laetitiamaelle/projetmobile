@@ -8,8 +8,8 @@ type Props={
 export default function CardFriandise({objetFriandise}:Props){
     return(
         <View style={style.container}>
-            { objetFriandise.isnew && <Badge>nouveau</Badge>}
-            <Image source={objetFriandise.image} style={style.imageCarte}></Image>
+            { objetFriandise.isnew && <View style={style.styleBadge}><Text style={{color:"white",fontWeight:"700"}}>Nouveau</Text></View>}
+            <Image source={objetFriandise.image} style={style.imageCarte} resizeMode="cover"></Image>
             <View style={style.container1}><Text style={style.nameTitle}>{objetFriandise.nom}</Text>
             <View style={style.container2}>
                 <Text>{objetFriandise.prix} FCFA</Text>
@@ -29,7 +29,7 @@ imageCarte: {
   },
   container:{
     width:"170px",
-    height:"170px",
+    height:"180px",
     borderRadius:20,
     marginTop:20,
     marginLeft:10,
@@ -40,7 +40,7 @@ imageCarte: {
   container1:{
      paddingLeft:15,
      paddingRight:15,
-     paddingBottom:10
+     paddingBottom:15
   },
   nameTitle:{
     fontWeight:700,
@@ -53,5 +53,18 @@ imageCarte: {
   },
   menuTextStyle:{
     fontSize:24
+  },
+  styleBadge:{
+    position:'absolute',
+    left:10,
+    top:10,
+    backgroundColor:'#75B843',
+    width:80,
+    height:20,
+    borderRadius:30,
+    zIndex:2,
+    justifyContent:"center",
+    alignItems:"center"
+    
   }
 })
