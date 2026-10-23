@@ -1,19 +1,40 @@
 import { Friandise } from "@/interfaces/friandise";
 import { Badge } from "expo-router";
 import {Text, View,Image, Button,StyleSheet, Pressable}from "react-native";
+import { useActionSheet } from "@expo/react-native-action-sheet";
 
 type Props={
     objetFriandise:Friandise;
 }
+
+
 export default function CardFriandise({objetFriandise}:Props){
+ const { showActionSheetWithOptions } = useActionSheet();
+const displayAction=()=>{
+ const actions :string[]=["supprimer","enregistrer","annuler"];
+  showActionSheetWithOptions({
+    title:"options",
+    options:actions,
+    cancelButtonIndex:2,
+    destructiveButtonIndex:0
+  },(selectIndex:number|undefined)=>{
+  switch(selectIndex){
+    case 0:
+      alert("la friandise ne peux pas etre supprimer pour le moment");
+      break;
+    case 1:
+      alert("la friandise a ete enregistrer dans votre panier");
+  }
+})
+}
     return(
         <View style={style.container}>
             { objetFriandise.isnew && <View style={style.styleBadge}><Text style={{color:"white",fontWeight:"700"}}>Nouveau</Text></View>}
-            <Image source={objetFriandise.image} style={style.imageCarte} resizeMode="cover"></Image>
+            <Image source={objetFriandise.image} style={style.imageCarte} resizeMode="stretch"></Image>
             <View style={style.container1}><Text style={style.nameTitle}>{objetFriandise.nom}</Text>
             <View style={style.container2}>
                 <Text>{objetFriandise.prix} FCFA</Text>
-                <Pressable onPress={()=>alert("menu ouvert")}><Text style={style.menuTextStyle}>...</Text></Pressable>
+                <Pressable onPress={displayAction}><Text style={style.menuTextStyle}>...</Text></Pressable>
             </View>
             </View>
         </View>
